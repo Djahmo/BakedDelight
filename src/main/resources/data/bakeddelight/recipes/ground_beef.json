@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:shears"
+    },
+    "X": {
+      "item": "minecraft:beef"
+    }
+  },
+  "pattern": [
+    "#X"
+  ],
+  "result": {
+    "count": 1,
+    "item": "bakeddelight:ground_beef"
+  }
+}

@@ -1,0 +1,38 @@
+modLoader="javafml"
+loaderVersion="[43,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Djahmo/BakedDelight/issues"
+
+[[mods]]
+modId="bakeddelight"
+version="0.4"
+displayName="Baked Delight"
+displayURL="https://github.com/Djahmo/BakedDelight"
+logoFile="logo.png"
+logoBlur=false
+credits="Blockbench software, vectorwing, and my wife Yahime for texture help"
+authors="Djahmo"
+description="An addon for Farmer's Delight"
+itemIcon="bakeddelight:baking_dish"
+configBackground="minecraft:textures/block/bricks.png"
+
+[[dependencies.bakeddelight]]
+    modId="farmersdelight"
+    mandatory=true
+    versionRange="[1.19-1.2.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.bakeddelight]]
+    modId="forge"
+    mandatory=true
+    versionRange="[43,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.bakeddelight]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.2,1.20)"
+    ordering="NONE"
+    side="BOTH"

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "bakeddelight:baking_dish"
+    },
+    "&": {
+      "item": "bakeddelight:lasagna_pasta"
+    },
+    "O": {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    "X": {
+      "item": "bakeddelight:cooked_ground_beef_porkchop"
+    },
+    "@": {
+      "item": "bakeddelight:cheese"
+    }
+  },
+  "pattern": [
+    "&@&",
+    "XOX",
+    "&#&"
+  ],
+  "result": {
+    "count": 1,
+    "item": "bakeddelight:uncooked_lasagna_dish"
+  }
+}

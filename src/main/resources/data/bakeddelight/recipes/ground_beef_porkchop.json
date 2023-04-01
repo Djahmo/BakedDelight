@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "bakeddelight:ground_porkchop"
+    },
+    "X": {
+      "item": "bakeddelight:ground_beef"
+    }
+  },
+  "pattern": [
+    "#X"
+  ],
+  "result": {
+    "count": 1,
+    "item": "bakeddelight:ground_beef_porkchop"
+  }
+}

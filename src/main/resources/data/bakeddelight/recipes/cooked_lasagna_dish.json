@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "bakeddelight:uncooked_lasagna_dish"
+  },
+  "result": "bakeddelight:cooked_lasagna_dish"
+}

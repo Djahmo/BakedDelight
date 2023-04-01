@@ -1,0 +1,19 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.rolling_pin": "Rolling pin",
+  "item.bakeddelight.ground_beef": "Ground Beef",
+  "item.bakeddelight.ground_porkchop": "Ground Porkchop",
+  "item.bakeddelight.ground_beef_porkchop": "Ground Beef and Porkchop",
+  "item.bakeddelight.cooked_ground_beef": "Cooked ground Beef",
+  "item.bakeddelight.cooked_ground_porkchop": "Cooked ground Porkchop",
+  "item.bakeddelight.cooked_ground_beef_porkchop": "Cooked ground Beef and Porkchop",
+  "item.bakeddelight.lasagna_pasta": "Lasagna dough",
+  "item.bakeddelight.cheese": "Cheese",
+  "item.bakeddelight.uncooked_lasagna": "Uncooked Lasagna",
+  "item.bakeddelight.lasagna_slice": "Lasagna slice",
+
+  "block.bakeddelight.baking_dish" : "Baking dish",
+  "block.bakeddelight.uncooked_lasagna_dish": "Uncooked Lasagna dish",
+  "block.bakeddelight.cooked_lasagna_dish": "Cooked Lasagna dish"
+}
