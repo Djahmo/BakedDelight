@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS;
-    public static final RegistryObject<Block> BACKING_DISH, UNCOOKED_LASAGNA_DISH, COOKED_LASAGNA_DISH;
+    public static final RegistryObject<Block> BAKING_DISH, UNCOOKED_LASAGNA_DISH, COOKED_LASAGNA_DISH;
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
@@ -36,7 +36,7 @@ public class ModBlocks {
 
     static {
         BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BakedDelight.MODID);
-        BACKING_DISH = setBlock("baking_dish", () -> new BakingDishBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(0.4F)));
+        BAKING_DISH = setBlock("baking_dish", () -> new BakingDishBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(0.4F)));
         UNCOOKED_LASAGNA_DISH = setBlock("uncooked_lasagna_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(0.4F)));
         COOKED_LASAGNA_DISH = setBlock("cooked_lasagna_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.LASAGNA_SLICE));
     }

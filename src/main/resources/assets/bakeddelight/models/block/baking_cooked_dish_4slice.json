@@ -7,23 +7,12 @@
 	},
 	"elements": [
 		{
-			"name": "5",
+			"name": "3",
 			"from": [2, 1, 4],
-			"to": [6, 7, 8],
-			"faces": {
-				"east": {"uv": [10.66667, 0, 16, 16], "texture": "#inner"},
-				"south": {"uv": [0, 0, 5.33334, 16], "texture": "#inner"},
-				"up": {"uv": [16, 16, 10.66667, 8], "texture": "#top"}
-			}
-		},
-		{
-			"name": "6",
-			"from": [2, 1, 8],
 			"to": [6, 7, 12],
 			"faces": {
-				"north": {"uv": [10.66666, 0, 16, 16], "texture": "#inner"},
-				"east": {"uv": [0, 0, 5.33333, 16], "texture": "#inner"},
-				"up": {"uv": [16, 8, 10.66667, 0], "texture": "#top"}
+				"east": {"uv": [5.33333, 0, 16, 16], "texture": "#inner"},
+				"up": {"uv": [16, 16, 10.66667, 0], "texture": "#top"}
 			}
 		},
 		{
@@ -385,13 +374,14 @@
 			"name": "Slice",
 			"origin": [0, 0, 0],
 			"color": 0,
-			"children": [0, 1]
+			"children": [0]
 		},
 		{
 			"name": "BakingDish",
 			"origin": [0, 0, 0],
 			"color": 0,
 			"children": [
+				1,
 				2,
 				3,
 				4,
@@ -408,18 +398,17 @@
 				15,
 				16,
 				17,
-				18,
 				{
 					"name": "Poignee",
 					"origin": [0, 0, 0],
 					"color": 0,
-					"children": [19, 20, 21]
+					"children": [18, 19, 20]
 				},
 				{
 					"name": "Poignee",
 					"origin": [0, 0, 0],
 					"color": 0,
-					"children": [22, 23, 24]
+					"children": [21, 22, 23]
 				}
 			]
 		}

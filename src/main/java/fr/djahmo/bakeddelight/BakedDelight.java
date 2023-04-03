@@ -20,6 +20,7 @@ public class BakedDelight {
             return new ItemStack(ModBlocks.COOKED_LASAGNA_DISH.get());
         }
     };
+
     public BakedDelight() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::commonSetup);

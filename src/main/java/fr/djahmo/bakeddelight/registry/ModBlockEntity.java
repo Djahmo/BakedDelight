@@ -20,6 +20,6 @@ public class ModBlockEntity {
 
     static {
         ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, BakedDelight.MODID);
-        BACKING_DISH = ENTITIES.register("baking_dish", () -> BlockEntityType.Builder.of(BakingDishEntity::new, ModBlocks.BACKING_DISH.get()).build(null));
+        BACKING_DISH = ENTITIES.register("baking_dish", () -> BlockEntityType.Builder.of(BakingDishEntity::new, ModBlocks.BAKING_DISH.get()).build(null));
     }
 }

@@ -15,7 +15,7 @@ public class ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BakedDelight.MODID);
     public static final RegistryObject<Item> ROLLING_PIN;
-    public static final RegistryObject<Item> GROUND_BEEF, GROUND_PORKCHOP, GROUND_BEEF_PORKCHOP, COOKED_GROUND_BEEF, COOKED_GROUND_PORKCHOP, COOKED_GROUND_BEEF_PORKCHOP, LASAGNA_PASTA, CHEESE, LASAGNA_SLICE;
+    public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, CHEESE, LASAGNA_SLICE, BOLOGNESE;
     public static void register(IEventBus eventBus) {ITEMS.register(eventBus);}
 
     private static RegistryObject<Item> setItem(String name, FoodProperties food) {
@@ -25,15 +25,13 @@ public class ModItems {
         // Item
         ROLLING_PIN = ITEMS.register("rolling_pin", () -> new SwordItem(Tiers.WOOD, 2, -2.4F, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
         // Food
-        GROUND_BEEF = setItem("ground_beef", FoodValues.GROUND_BEEF);
-        GROUND_PORKCHOP = setItem("ground_porkchop", FoodValues.GROUND_PORKCHOP);
-        GROUND_BEEF_PORKCHOP = setItem("ground_beef_porkchop", FoodValues.GROUND_BEEF_PORKCHOP);
-        COOKED_GROUND_BEEF = setItem("cooked_ground_beef", FoodValues.COOKED_GROUND_BEEF);
-        COOKED_GROUND_PORKCHOP = setItem("cooked_ground_porkchop", FoodValues.COOKED_GROUND_PORKCHOP);
-        COOKED_GROUND_BEEF_PORKCHOP = setItem("cooked_ground_beef_porkchop", FoodValues.COOKED_GROUND_BEEF_PORKCHOP);
+
+        GROUND_MEAT = setItem("ground_meat", FoodValues.GROUND_MEAT);
+        COOKED_GROUND_MEAT = setItem("cooked_ground_meat", FoodValues.COOKED_GROUND_MEAT);
         LASAGNA_PASTA = setItem("lasagna_pasta", FoodValues.LASAGNA_DOUGH);
         CHEESE = setItem("cheese", FoodValues.CHEESE);
         LASAGNA_SLICE = setItem("lasagna_slice", FoodValues.CHEESE);
+        BOLOGNESE = setItem("bolognese", FoodValues.BOLOGNESE);
 
     }
 }

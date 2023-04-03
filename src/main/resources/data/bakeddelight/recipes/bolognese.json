@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "bakeddelight:cooked_ground_meat"
+    },
+    "X": {
+      "item": "farmersdelight:tomato_sauce"
+    }
+  },
+  "pattern": [
+    "#X#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "bakeddelight:bolognese"
+  }
+}

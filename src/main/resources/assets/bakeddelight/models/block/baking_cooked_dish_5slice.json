@@ -12,7 +12,7 @@
 			"to": [6, 7, 12],
 			"faces": {
 				"north": {"uv": [10.66666, 0, 16, 16], "texture": "#inner"},
-				"east": {"uv": [0, 0, 5.33333, 16], "texture": "#inner"},
+				"east": {"uv": [5.33333, 0, 10.66666, 16], "texture": "#inner"},
 				"up": {"uv": [16, 8, 10.66667, 0], "texture": "#top"}
 			}
 		},

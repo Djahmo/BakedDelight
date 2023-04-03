@@ -1,8 +1,13 @@
 package fr.djahmo.bakeddelight.custom.block;
 
 import fr.djahmo.bakeddelight.custom.entity.BakingDishEntity;
+import fr.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
+import fr.djahmo.bakeddelight.registry.ModRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.Containers;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -25,25 +30,51 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
 
 public class BakingDishBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING;
     public static final IntegerProperty SLICE;
-    public static final EnumProperty<RecipeType> RECIPE;
+    public static final EnumProperty<DishType> DISH;
 
-    public enum RecipeType implements StringRepresentable {
-        LASAGNA, GRATIN;
-        public @NotNull String getSerializedName() {
+    private ArrayList<ArrayList<Item>> validRecipe;
+
+    public enum DishType implements StringRepresentable {
+        LASAGNA("uncooked_lasagna_dish"),
+        GRATIN("uncooked_gratin_dish");
+        private final String name;
+
+        DishType(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String getSerializedName() {
+            return name;
+        }
+
+        public Block getDish() {
             return switch (this) {
-                case LASAGNA -> "lasagna";
-                case GRATIN -> "gratin";
+                case LASAGNA -> ModBlocks.UNCOOKED_LASAGNA_DISH.get();
+                case GRATIN -> ModBlocks.UNCOOKED_LASAGNA_DISH.get();
             };
         }
+
+        public static DishType getType(String name) {
+            for (DishType type : values()) {
+                if (type.name.equals(name)) {
+                    return type;
+                }
+            }
+            return null;
+        }
     }
+
     public static final int maxSlice = 6;
 
+    public static ArrayList<ArrayList<Item>> recipeList;
 
     public BakingDishBlock(Properties properties) {
         super(properties);
@@ -51,7 +82,7 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
 
     public static BlockState getBakingDish(BlockState state) {
-        return ModBlocks.BACKING_DISH.get().defaultBlockState().setValue(FACING, state.getValue(FACING));
+        return ModBlocks.BAKING_DISH.get().defaultBlockState().setValue(FACING, state.getValue(FACING));
     }
 
     @Override
@@ -99,13 +130,13 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, SLICE);
+        builder.add(FACING, SLICE, DISH);
     }
 
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
         SLICE = IntegerProperty.create("slice", 0, 5);
-        RECIPE = EnumProperty.create("recipe", RecipeType.class);
+        DISH = EnumProperty.create("dish", DishType.class);
     }
 
     /* BLOCK ENTITY */
@@ -116,10 +147,13 @@ public class BakingDishBlock extends BaseEntityBlock {
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getItemInHand(hand);
-        if(!level.isClientSide) {
+        if(!level.isClientSide && hand == InteractionHand.MAIN_HAND) {
             BlockEntity entity = level.getBlockEntity(pos);
             if(entity instanceof BakingDishEntity) {
-                return addSlice(state, level, pos, heldStack);
+                if(!player.isCrouching())
+                    return addSlice(state, level, pos, heldStack, player, (BakingDishEntity)entity);
+                else
+                    return dropSlice(state, level, pos, heldStack, (BakingDishEntity)entity);
             } else {
                 throw new IllegalStateException("BakingDishEntity is missing");
             }
@@ -127,20 +161,87 @@ public class BakingDishBlock extends BaseEntityBlock {
         return InteractionResult.PASS;
     }
 
-    protected InteractionResult addSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack) {
-        int slice = state.getValue(SLICE);
-        if(slice < maxSlice-1) {
-            level.setBlock(pos, state.setValue(SLICE, slice+1), Block.UPDATE_ALL);
-            return InteractionResult.SUCCESS;
+    private boolean verify(int slice, Item item, BakingDishEntity entity, boolean add) {
+        boolean found = false;
+        if(slice == 0) {
+            validRecipe = new ArrayList<>();
+            for (ArrayList<Item> recipe : recipeList) {
+                if (recipe.get(slice+1).equals(item)) {
+                    found = true;
+                    validRecipe.add(recipe);
+                    break;
+                }
+            }
         }
         else {
-            level.setBlock(pos, ModBlocks.UNCOOKED_LASAGNA_DISH.get().defaultBlockState().setValue(FACING, state.getValue(FACING)), Block.UPDATE_ALL);
+            if(add) {
+                for (ArrayList<Item> recipe : validRecipe) {
+                    if (recipe.get(slice+1).equals(item)) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            else {
+                validRecipe = new ArrayList<>();
+                for (ArrayList<Item> recipe : recipeList) {
+                    ArrayList<Item> list = entity.getItemList();
+                    boolean valid = false;
+                    for (int i = 0; i < list.size(); i++) {
+                        if (recipe.get(i+1).equals(list.get(i))) {
+                            valid = true;
+                        }
+                        else {
+                            valid = false;
+                            break;
+                        }
+                    }
+                    if(valid)
+                        validRecipe.add(recipe);
+                }
+            }
+        }
+        return found;
+    }
+
+
+    protected InteractionResult addSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack, Player player, BakingDishEntity entity) {
+        if(recipeList == null)
+            recipeList = ModRecipe.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
+
+        int slice = state.getValue(SLICE);
+        boolean found = verify(slice, heldStack.getItem(), entity, true);
+        if(found) {
+            if(slice < maxSlice-1) {
+                DishType type = DishType.getType(validRecipe.get(0).get(0).getDescriptionId().split("\\.")[2]);
+                if(type == null)
+                    throw new IllegalStateException("Type is missing");
+
+                player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
+                entity.addItem(new ItemStack(heldStack.getItem()), slice);
+                level.setBlock(pos, state.setValue(SLICE, slice+1).setValue(DISH, type), Block.UPDATE_ALL);
+                return InteractionResult.SUCCESS;
+            }
+            else {
+                level.setBlock(pos, state.getValue(DISH).getDish().defaultBlockState().setValue(FACING, state.getValue(FACING)), Block.UPDATE_ALL);
+            }
+        }
+        return InteractionResult.PASS;
+    }
+
+    protected InteractionResult dropSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack, BakingDishEntity entity) {
+        int slice = state.getValue(SLICE);
+        if(slice > 0) {
+            Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), entity.dropItem(slice-1));
+            level.setBlock(pos, state.setValue(SLICE, slice-1), Block.UPDATE_ALL);
+            verify(slice, heldStack.getItem(), entity, false);
+            return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
     }
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if(state.getBlock() != newState.getBlock()){
+        if(state.getBlock() != newState.getBlock() && newState.getBlock() != state.getValue(DISH).getDish()){
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if(blockEntity instanceof BakingDishEntity){
                 ((BakingDishEntity) blockEntity).drops();
