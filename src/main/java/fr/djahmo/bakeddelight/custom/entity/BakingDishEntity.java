@@ -18,7 +18,7 @@ public class BakingDishEntity extends BlockEntity {
         super(ModBlockEntity.BACKING_DISH.get(), pos, state);
     }
 
-    private final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();

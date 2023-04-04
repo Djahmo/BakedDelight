@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "facing=north,slice=0": {
+      "model": "bakeddelight:block/cooked_gratin_dish"
+    },
+    "facing=south,slice=0": {
+      "model": "bakeddelight:block/cooked_gratin_dish",
+      "y": 180
+    },
+    "facing=west,slice=0": {
+      "model": "bakeddelight:block/cooked_gratin_dish",
+      "y": 270
+    },
+    "facing=east,slice=0": {
+      "model": "bakeddelight:block/cooked_gratin_dish",
+      "y": 90
+    },
+    "facing=north,slice=1": {
+      "model": "bakeddelight:block/cooked_gratin_dish_1slice"
+    },
+    "facing=south,slice=1": {
+      "model": "bakeddelight:block/cooked_gratin_dish_1slice",
+      "y": 180
+    },
+    "facing=west,slice=1": {
+      "model": "bakeddelight:block/cooked_gratin_dish_1slice",
+      "y": 270
+    },
+    "facing=east,slice=1": {
+      "model": "bakeddelight:block/cooked_gratin_dish_1slice",
+      "y": 90
+    },
+    "facing=north,slice=2": {
+      "model": "bakeddelight:block/cooked_gratin_dish_2slice"
+    },
+    "facing=south,slice=2": {
+      "model": "bakeddelight:block/cooked_gratin_dish_2slice",
+      "y": 180
+    },
+    "facing=west,slice=2": {
+      "model": "bakeddelight:block/cooked_gratin_dish_2slice",
+      "y": 270
+    },
+    "facing=east,slice=2": {
+      "model": "bakeddelight:block/cooked_gratin_dish_2slice",
+      "y": 90
+    },
+    "facing=north,slice=3": {
+      "model": "bakeddelight:block/cooked_gratin_dish_3slice"
+    },
+    "facing=south,slice=3": {
+      "model": "bakeddelight:block/cooked_gratin_dish_3slice",
+      "y": 180
+    },
+    "facing=west,slice=3": {
+      "model": "bakeddelight:block/cooked_gratin_dish_3slice",
+      "y": 270
+    },
+    "facing=east,slice=3": {
+      "model": "bakeddelight:block/cooked_gratin_dish_3slice",
+      "y": 90
+    },
+    "facing=north,slice=4": {
+      "model": "bakeddelight:block/cooked_gratin_dish_4slice"
+    },
+    "facing=south,slice=4": {
+      "model": "bakeddelight:block/cooked_gratin_dish_4slice",
+      "y": 180
+    },
+    "facing=west,slice=4": {
+      "model": "bakeddelight:block/cooked_gratin_dish_4slice",
+      "y": 270
+    },
+    "facing=east,slice=4": {
+      "model": "bakeddelight:block/cooked_gratin_dish_4slice",
+      "y": 90
+    },
+    "facing=north,slice=5": {
+      "model": "bakeddelight:block/cooked_gratin_dish_5slice"
+    },
+    "facing=south,slice=5": {
+      "model": "bakeddelight:block/cooked_gratin_dish_5slice",
+      "y": 180
+    },
+    "facing=west,slice=5": {
+      "model": "bakeddelight:block/cooked_gratin_dish_5slice",
+      "y": 270
+    },
+    "facing=east,slice=5": {
+      "model": "bakeddelight:block/cooked_gratin_dish_5slice",
+      "y": 90
+    }
+  }
+}

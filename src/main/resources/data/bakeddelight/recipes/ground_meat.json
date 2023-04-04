@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "farmersdelight:bacon"
+      "item": "bakeddelight:bacon_bits"
     },
     "X": {
       "item": "farmersdelight:minced_beef"
