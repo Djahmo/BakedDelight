@@ -1,12 +1,11 @@
 package fr.djahmo.bakeddelight.registry;
 
 import fr.djahmo.bakeddelight.BakedDelight;
+import fr.djahmo.bakeddelight.custom.item.ChefSuitItem;
 import fr.djahmo.bakeddelight.custom.item.FoodItem;
 import fr.djahmo.bakeddelight.utils.FoodValues;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -17,9 +16,16 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BakedDelight.MODID);
     public static final RegistryObject<Item> ROLLING_PIN;
     public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE;
+    public static final RegistryObject<ArmorItem> CHEFS_HAT, CHEFS_JACKET, CHEFS_PANTS, CHEFS_SHOES;
     public static void register(IEventBus eventBus) {ITEMS.register(eventBus);}
     
     static {
+        // Chef Suit
+        CHEFS_HAT = ITEMS.register("chefs_hat", () -> new ChefSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.HEAD, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
+        CHEFS_JACKET = ITEMS.register("chefs_jacket", () -> new ChefSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.CHEST, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
+        CHEFS_PANTS = ITEMS.register("chefs_pants", () -> new ChefSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.LEGS, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
+        CHEFS_SHOES = ITEMS.register("chefs_shoes", () -> new ChefSuitItem(ArmorMaterials.LEATHER, EquipmentSlot.FEET, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
+
         // Item
         ROLLING_PIN = ITEMS.register("rolling_pin", () -> new SwordItem(Tiers.WOOD, 2, -2.4F, new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
         // Food

@@ -31,7 +31,7 @@ public class ModBlocks {
     }
 
     public static void setItemBlock(String name, RegistryObject<Block> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(BakedDelight.CREATIVE_TAB)));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(BakedDelight.CREATIVE_TAB).stacksTo(1)));
     }
 
     static {
