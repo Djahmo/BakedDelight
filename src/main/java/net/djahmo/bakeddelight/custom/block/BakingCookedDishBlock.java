@@ -93,13 +93,6 @@ public class BakingCookedDishBlock extends BakingDishBlock {
                 Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), this.getItemSlice());
             }
         }
-        if (!level.isClientSide()) {
-            if (!newState.is(state.getBlock())) {
-                if (!canSurvive(state, level, pos)) {
-                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getBakingDish(state).getBlock().asItem(), 1));
-                }
-            }
-        }
         super.onRemove(state, level, pos, newState, isMoving);
     }
 }
