@@ -1,5 +1,5 @@
 
---Version 0.5
+-- Version 0.0.1 --
 
     1. Open IDEA, and import project.
     2. Select your build.gradle file and have it import.
