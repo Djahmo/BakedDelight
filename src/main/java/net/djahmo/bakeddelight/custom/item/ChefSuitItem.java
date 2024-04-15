@@ -1,0 +1,125 @@
+package net.djahmo.bakeddelight.custom.item;
+
+import com.google.common.collect.ImmutableMap;
+import net.djahmo.bakeddelight.custom.entity.model.ChefSuitRenderer;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.core.animation.*;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
+import software.bernie.geckolib.animatable.GeoItem;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.core.object.PlayState;
+
+import java.util.Map;
+import java.util.function.Consumer;
+
+public class ChefSuitItem extends ArmorItem implements GeoItem {
+
+    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+
+    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
+                    .put(ArmorMaterials.LEATHER, new MobEffectInstance(MobEffects.LUCK, 200, 1)).build();
+
+    public ChefSuitItem(ArmorMaterial material, Type type) {
+        super(material, type, new Item.Properties());
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private ChefSuitRenderer renderer;
+            @Override
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack,  EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                if(this.renderer == null) {
+                    this.renderer = new ChefSuitRenderer();
+                }
+                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
+                return this.renderer;
+            }
+        });
+    }
+
+    private PlayState predicate(AnimationState animationState) {
+        animationState.getController().setAnimation(RawAnimation.begin().then("idle", Animation.LoopType.LOOP));
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
+        controllerRegistrar.add(new AnimationController<>(this, "controller", 0, this::predicate));
+    }
+
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return cache;
+    }
+
+    @Override
+    public void onArmorTick(ItemStack stack, Level world, Player player) {
+        if(!world.isClientSide()) {
+            if(hasFullSuitOfArmorOn(player)) {
+                evaluateArmorEffects(player);
+            }
+        }
+    }
+
+    private void evaluateArmorEffects(Player player) {
+        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+            ArmorMaterial mapArmorMaterial = entry.getKey();
+            MobEffectInstance mapStatusEffect = entry.getValue();
+
+            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
+                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+            }
+        }
+    }
+
+    private void addStatusEffectForMaterial(Player player, ArmorMaterial mapArmorMaterial,
+                                            MobEffectInstance mapStatusEffect) {
+        boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
+
+        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+            player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
+                    mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+
+        }
+    }
+
+    private boolean hasFullSuitOfArmorOn(Player player) {
+        ItemStack boots = player.getInventory().getArmor(0);
+        ItemStack leggings = player.getInventory().getArmor(1);
+        ItemStack breastplate = player.getInventory().getArmor(2);
+        ItemStack helmet = player.getInventory().getArmor(3);
+
+        return !helmet.isEmpty() && !breastplate.isEmpty()
+                && !leggings.isEmpty() && !boots.isEmpty();
+    }
+
+    private boolean hasCorrectArmorOn(ArmorMaterial material, Player player) {
+        for (ItemStack armorStack: player.getInventory().armor) {
+            if(!(armorStack.getItem() instanceof ArmorItem)) {
+                return false;
+            }
+        }
+
+        ArmorItem boots = ((ArmorItem)player.getInventory().getArmor(0).getItem());
+        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmor(1).getItem());
+        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmor(2).getItem());
+        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmor(3).getItem());
+
+        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
+                leggings.getMaterial() == material && boots.getMaterial() == material;
+    }
+}

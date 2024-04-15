@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "bakeddelight:bacon_bits"
+    },
+    "X": {
+      "item": "farmersdelight:minced_beef"
+    }
+  },
+  "pattern": [
+    "#X"
+  ],
+  "result": {
+    "count": 1,
+    "item": "bakeddelight:ground_meat"
+  }
+}

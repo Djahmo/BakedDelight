@@ -1,0 +1,26 @@
+{
+  "type": "bakeddelight:baking_dish",
+  "ingredients": [
+    {
+      "item": "bakeddelight:lasagna_pasta"
+    },
+    {
+      "item": "bakeddelight:bolognese"
+    },
+    {
+      "item": "bakeddelight:lasagna_pasta"
+    },
+    {
+      "item": "bakeddelight:bolognese"
+    },
+    {
+      "item": "bakeddelight:lasagna_pasta"
+    },
+    {
+      "item": "bakeddelight:cheese"
+    }
+  ],
+  "bakeddish": {
+    "item": "bakeddelight:uncooked_lasagna_dish"
+  }
+}
