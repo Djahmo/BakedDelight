@@ -1,9 +1,11 @@
 package net.djahmo.bakeddelight.custom.block;
 
+import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.entity.BakingDishEntity;
 import net.djahmo.bakeddelight.custom.item.FoodItem;
 import net.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
 import net.djahmo.bakeddelight.registry.ModBlocks;
+import net.djahmo.bakeddelight.registry.ModItems;
 import net.djahmo.bakeddelight.registry.ModRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -118,9 +120,12 @@ public class BakingDishBlock extends BaseEntityBlock {
     public BlockState mirror( BlockState pState, Mirror pMirror) {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
+
+    @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return level.getBlockState(pos.below()).isSolid();
     }
+
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING, SLICE, DISH);
@@ -239,10 +244,12 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if(state.getBlock() != newState.getBlock() && newState.getBlock() != Block.byItem(validRecipe.get(0).get(0))){
-            BlockEntity blockEntity = level.getBlockEntity(pos);
-            if(blockEntity instanceof BakingDishEntity){
-                ((BakingDishEntity) blockEntity).drops();
+        if(validRecipe != null) {
+            if(state.getBlock() != newState.getBlock() && newState.getBlock() != Block.byItem(validRecipe.get(0).get(0))){
+                BlockEntity blockEntity = level.getBlockEntity(pos);
+                if(blockEntity instanceof BakingDishEntity){
+                    ((BakingDishEntity) blockEntity).drops();
+                }
             }
         }
         super.onRemove(state, level, pos, newState, isMoving);

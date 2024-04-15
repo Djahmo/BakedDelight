@@ -63,9 +63,9 @@ public class BakingCookedDishBlock extends BakingDishBlock {
             return InteractionResult.PASS;
         } else {
             playerIn.eat(level, this.getItemSlice());
-            int slices = state.getValue(SLICE);
-            if (slices < maxSlice - 1) {
-                level.setBlock(pos, state.setValue(SLICE, slices + 1), Block.UPDATE_ALL);
+            int eatedSlices = state.getValue(SLICE);
+            if (eatedSlices < maxSlice - 1) {
+                level.setBlock(pos, state.setValue(SLICE, eatedSlices + 1), Block.UPDATE_ALL);
             } else {
                 level.setBlock(pos, getBakingDish(state), Block.UPDATE_ALL);
             }
@@ -91,6 +91,13 @@ public class BakingCookedDishBlock extends BakingDishBlock {
         if(state.getBlock() != newState.getBlock() && newState.getBlock() != ModBlocks.BAKING_DISH.get()) {
             for(int i = state.getValue(SLICE); i < maxSlice ; i++) {
                 Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), this.getItemSlice());
+            }
+        }
+        if (!level.isClientSide()) {
+            if (!newState.is(state.getBlock())) {
+                if (!canSurvive(state, level, pos)) {
+                    Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(getBakingDish(state).getBlock().asItem(), 1));
+                }
             }
         }
         super.onRemove(state, level, pos, newState, isMoving);
