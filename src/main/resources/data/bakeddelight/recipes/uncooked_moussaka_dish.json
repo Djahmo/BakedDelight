@@ -1,0 +1,26 @@
+{
+  "type": "bakeddelight:baking_dish",
+  "ingredients": [
+    {
+      "item": "bakeddelight:sliced_potato"
+    },
+    {
+      "item": "bakeddelight:sliced_eggplant"
+    },
+    {
+      "item": "bakeddelight:bolognese"
+    },
+    {
+      "item": "bakeddelight:sliced_eggplant"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "bakeddelight:cheese"
+    }
+  ],
+  "bakeddish": {
+    "item": "bakeddelight:uncooked_moussaka_dish"
+  }
+}

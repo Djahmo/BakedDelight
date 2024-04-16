@@ -11,11 +11,13 @@
   "item.bakeddelight.cooked_ground_meat": "Cooked Ground Meat",
   "item.bakeddelight.lasagna_pasta": "Lasagna Pasta",
   "item.bakeddelight.sliced_potato": "Sliced Potato",
+  "item.bakeddelight.sliced_eggplant": "Sliced Eggplant",
   "item.bakeddelight.cheese": "Cheese",
   "item.bakeddelight.bacon_bits": "Bacon Bits",
   "item.bakeddelight.cooked_bacon_bits": "Cooked Bacon Bits",
   "item.bakeddelight.lasagna_slice": "Lasagna Slice",
   "item.bakeddelight.gratin_slice": "Gratin Slice",
+  "item.bakeddelight.moussaka_slice": "Moussaka Slice",
   "item.bakeddelight.bolognese": "Bolognese",
   "item.bakeddelight.bacon_cream": "Bacon Cream",
 
@@ -26,5 +28,7 @@
   "block.bakeddelight.uncooked_lasagna_dish": "Uncooked Lasagna",
   "block.bakeddelight.cooked_lasagna_dish": "Cooked Lasagna",
   "block.bakeddelight.uncooked_gratin_dish": "Uncooked Gratin",
-  "block.bakeddelight.cooked_gratin_dish": "Cooked Gratin"
+  "block.bakeddelight.cooked_gratin_dish": "Cooked Gratin",
+  "block.bakeddelight.uncooked_moussaka_dish": "Uncooked Moussaka",
+  "block.bakeddelight.cooked_moussaka_dish": "Cooked Moussaka"
 }

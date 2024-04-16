@@ -1,6 +1,0 @@
-{
-  "parent": "bakeddelight:block/baking_uncooked_dish_4slice",
-  "textures": {
-    "top": "bakeddelight:block/sliced_potato"
-  }
-}

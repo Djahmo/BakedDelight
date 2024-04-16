@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS;
     public static final RegistryObject<Item> ROLLING_PIN;
-    public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE;
+    public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, SLICED_EGGPLANT, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE, MOUSSAKA_SLICE;
     public static final RegistryObject<ArmorItem> CHEFS_HAT, CHEFS_JACKET, CHEFS_PANTS, CHEFS_SHOES;
     public static final RegistryObject<Item> EGGPLANT_SEED, EGGPLANT;
 
@@ -42,6 +42,9 @@ public class ModItems {
 
         LASAGNA_SLICE = ITEMS.register("lasagna_slice", () -> new FoodItem(FoodValues.LASAGNA_SLICE));
         GRATIN_SLICE = ITEMS.register("gratin_slice", () -> new FoodItem(FoodValues.GRATIN_SLICE));
+        MOUSSAKA_SLICE = ITEMS.register("moussaka_slice", () -> new FoodItem(FoodValues.MOUSSAKA_SLICE));
+
+        SLICED_EGGPLANT = ITEMS.register("sliced_eggplant", () -> new FoodItem(FoodValues.EGGPLANT));
 
         //Crop
         EGGPLANT_SEED = ITEMS.register("eggplant_seed", () -> new ItemNameBlockItem(ModBlocks.EGGPLANT_CROP.get(), new Item.Properties()));

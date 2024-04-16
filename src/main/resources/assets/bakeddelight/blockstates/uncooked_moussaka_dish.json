@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish"
+    },
+    "facing=south": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish",
+      "y": 90
+    }
+  }
+}

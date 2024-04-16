@@ -7,7 +7,6 @@ import net.djahmo.bakeddelight.registry.ModBlocks;
 import net.djahmo.bakeddelight.registry.ModRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -25,7 +24,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -37,37 +35,13 @@ import java.util.ArrayList;
 public class BakingDishBlock extends BaseEntityBlock {
     public static final DirectionProperty FACING;
     public static final IntegerProperty SLICE;
-    public static final EnumProperty<DishType> DISH;
+    public static final IntegerProperty DISH;
 
-    private ArrayList<ArrayList<Item>> validRecipe;
+    public static ArrayList<ArrayList<Item>> recipesList;
 
-    public enum DishType implements StringRepresentable {
-        LASAGNA("uncooked_lasagna_dish"),
-        GRATIN("uncooked_gratin_dish");
-        private final String name;
-
-        DishType(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String getSerializedName() {
-            return name;
-        }
-
-        public static DishType getType(String name) {
-            for (DishType type : values()) {
-                if (type.name.equals(name)) {
-                    return type;
-                }
-            }
-            return null;
-        }
-    }
+    protected static ArrayList<ArrayList<Item>> validRecipes = new ArrayList<>();
 
     public static final int maxSlice = 6;
-
-    public static ArrayList<ArrayList<Item>> recipeList;
 
     public BakingDishBlock(Properties properties) {
         super(properties);
@@ -132,7 +106,7 @@ public class BakingDishBlock extends BaseEntityBlock {
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
         SLICE = IntegerProperty.create("slice", 0, 5);
-        DISH = EnumProperty.create("dish", DishType.class);
+        DISH = IntegerProperty.create("dish", 0, 20);
     }
 
     /* BLOCK ENTITY */
@@ -158,58 +132,69 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
 
     private boolean verify(int slice, Item item, BakingDishEntity entity, boolean add) {
-        boolean found = false;
-        if(slice == 0) {
-            validRecipe = new ArrayList<>();
-            for (ArrayList<Item> recipe : recipeList) {
-                if (recipe.get(slice+1).equals(item)) {
-                    found = true;
-                    validRecipe.add(recipe);
-                    break;
-                }
-            }
+        if (slice == 0) {
+            return initializeValidRecipes(item);
+        } else {
+            return add ? updateValidRecipes(slice, item) : resetAndValidateRecipes(entity);
         }
-        else {
-            if(add) {
-                for (ArrayList<Item> recipe : validRecipe) {
-                    if (recipe.get(slice+1).equals(item)) {
-                        found = true;
-                        break;
-                    }
-                }
-            }
-            else {
-                validRecipe = new ArrayList<>();
-                for (ArrayList<Item> recipe : recipeList) {
-                    ArrayList<Item> list = entity.getItemList();
-                    boolean valid = false;
-                    for (int i = 0; i < list.size(); i++) {
-                        if (recipe.get(i+1).equals(list.get(i))) {
-                            valid = true;
-                        }
-                        else {
-                            valid = false;
-                            break;
-                        }
-                    }
-                    if(valid)
-                        validRecipe.add(recipe);
-                }
+    }
+
+    private boolean initializeValidRecipes(Item item) {
+        validRecipes.clear();
+        boolean found = false;
+        for (ArrayList<Item> recipe : recipesList) {
+            if (recipe.get(1).equals(item)) {
+                found = true;
+                validRecipes.add(recipe);
             }
         }
         return found;
     }
 
+    private boolean updateValidRecipes(int slice, Item item) {
+        ArrayList<ArrayList<Item>> matchedRecipes = new ArrayList<>();
+        boolean found = false;
+        for (ArrayList<Item> recipe : validRecipes) {
+            if (recipe.get(slice + 1).equals(item)) {
+                found = true;
+                matchedRecipes.add(recipe);
+            }
+        }
+        if (found) {
+            validRecipes = matchedRecipes;
+        }
+        return found;
+    }
+
+    private boolean resetAndValidateRecipes(BakingDishEntity entity) {
+        validRecipes.clear();
+        ArrayList<Item> list = entity.getItemList();
+        for (ArrayList<Item> recipe : recipesList) {
+            if (isRecipeValid(list, recipe)) {
+                validRecipes.add(recipe);
+            }
+        }
+        return !validRecipes.isEmpty();
+    }
+
+    private boolean isRecipeValid(ArrayList<Item> list, ArrayList<Item> recipe) {
+        for (int i = 0; i < list.size(); i++) {
+            if (!recipe.get(i + 1).equals(list.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     protected InteractionResult addSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack, Player player, BakingDishEntity entity) {
-        if(recipeList == null)
-            recipeList = ModRecipes.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
+        if(recipesList == null)
+            recipesList = ModRecipes.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
 
         int slice = state.getValue(SLICE);
         boolean found = verify(slice, heldStack.getItem(), entity, true);
         if(found) {
             if(slice < maxSlice-1) {
-                DishType type = DishType.getType(validRecipe.get(0).get(0).getDescriptionId().split("\\.")[2]);
+                Integer type = BackingDishTypeCollection.getDishId(validRecipes.get(0).get(0).getDescriptionId().split("\\.")[2]);
                 if(type == null)
                     throw new IllegalStateException("Type is missing");
                 if(heldStack.getItem() instanceof FoodItem) {
@@ -224,7 +209,7 @@ public class BakingDishBlock extends BaseEntityBlock {
             }
             else {
                 player.getItemInHand(InteractionHand.MAIN_HAND).shrink(1);
-                level.setBlock(pos, Block.byItem(validRecipe.get(0).get(0)).defaultBlockState().setValue(FACING, state.getValue(FACING)), Block.UPDATE_ALL);
+                level.setBlock(pos, Block.byItem(validRecipes.get(0).get(0)).defaultBlockState().setValue(FACING, state.getValue(FACING)), Block.UPDATE_ALL);
             }
         }
         return InteractionResult.PASS;
@@ -242,8 +227,8 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if(validRecipe != null && state.getValue(SLICE) > 0) {
-            if(state.getBlock() != newState.getBlock() && newState.getBlock() != Block.byItem(validRecipe.get(0).get(0))){
+        if(validRecipes != null && state.getValue(SLICE) > 0) {
+            if(state.getBlock() != newState.getBlock() && newState.getBlock() != Block.byItem(validRecipes.get(0).get(0))){
                 BlockEntity blockEntity = level.getBlockEntity(pos);
                 if(blockEntity instanceof BakingDishEntity){
                     ((BakingDishEntity) blockEntity).drops();

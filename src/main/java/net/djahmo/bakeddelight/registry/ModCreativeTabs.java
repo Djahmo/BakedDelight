@@ -31,22 +31,26 @@ public class ModCreativeTabs {
                             pOutput.accept(ModBlocks.COOKED_LASAGNA_DISH.get());
                             pOutput.accept(ModBlocks.UNCOOKED_GRATIN_DISH.get());
                             pOutput.accept(ModBlocks.COOKED_GRATIN_DISH.get());
+                            pOutput.accept(ModBlocks.UNCOOKED_MOUSSAKA_DISH.get());
+                            pOutput.accept(ModBlocks.COOKED_MOUSSAKA_DISH.get());
 
                             //Items
                             pOutput.accept(ModItems.GROUND_MEAT.get());
                             pOutput.accept(ModItems.COOKED_GROUND_MEAT.get());
                             pOutput.accept(ModItems.LASAGNA_PASTA.get());
                             pOutput.accept(ModItems.SLICED_POTATO.get());
+                            pOutput.accept(ModItems.SLICED_EGGPLANT.get());
                             pOutput.accept(ModItems.CHEESE.get());
                             pOutput.accept(ModItems.BACON_BITS.get());
                             pOutput.accept(ModItems.COOKED_BACON_BITS.get());
                             pOutput.accept(ModItems.BOLOGNESE.get());
                             pOutput.accept(ModItems.BACON_CREAM.get());
-                            pOutput.accept(ModItems.LASAGNA_SLICE.get());
-                            pOutput.accept(ModItems.GRATIN_SLICE.get());
                             pOutput.accept(ModItems.EGGPLANT_SEED.get());
                             pOutput.accept(ModItems.EGGPLANT.get());
 
+                            pOutput.accept(ModItems.LASAGNA_SLICE.get());
+                            pOutput.accept(ModItems.GRATIN_SLICE.get());
+                            pOutput.accept(ModItems.MOUSSAKA_SLICE.get());
                             //Tools
                             pOutput.accept(ModItems.ROLLING_PIN.get());
 

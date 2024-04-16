@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 400,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "bakeddelight:uncooked_moussaka_dish"
+  },
+  "result": "bakeddelight:cooked_moussaka_dish"
+}

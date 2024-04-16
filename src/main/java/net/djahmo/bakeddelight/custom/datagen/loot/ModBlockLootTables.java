@@ -30,6 +30,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropOther(ModBlocks.COOKED_GRATIN_DISH.get(), ModBlocks.BAKING_DISH.get());
 
 
+        this.dropSelf(ModBlocks.UNCOOKED_MOUSSAKA_DISH.get());
+        this.dropOther(ModBlocks.COOKED_MOUSSAKA_DISH.get(), ModBlocks.BAKING_DISH.get());
+
+
         LootItemCondition.Builder dropCondition = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.EGGPLANT_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(EggplantCropBlock.AGE, 5));

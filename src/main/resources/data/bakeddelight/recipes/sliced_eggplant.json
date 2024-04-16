@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "bakeddelight:eggplant"
+    }
+  ],
+  "result": [
+    {
+      "count": 1,
+      "item": "bakeddelight:sliced_eggplant"
+    }
+  ],
+  "tool": {
+    "tag": "farmersdelight:tools/knives"
+  }
+}

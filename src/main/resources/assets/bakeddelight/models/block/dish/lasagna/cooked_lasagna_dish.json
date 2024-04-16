@@ -1,0 +1,6 @@
+{
+  "parent": "bakeddelight:block/dish/template/baking_full_dish",
+  "textures": {
+    "top": "bakeddelight:block/cooked_lasagna_top"
+  }
+}

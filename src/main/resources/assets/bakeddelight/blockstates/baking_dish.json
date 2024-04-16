@@ -1,168 +1,243 @@
 {
   "variants": {
     "facing=north,slice=0": {
-      "model": "bakeddelight:block/baking_dish"
+      "model": "bakeddelight:block/dish/template/baking_dish"
     },
     "facing=south,slice=0": {
-      "model": "bakeddelight:block/baking_dish",
+      "model": "bakeddelight:block/dish/template/baking_dish",
       "y": 180
     },
     "facing=west,slice=0": {
-      "model": "bakeddelight:block/baking_dish",
+      "model": "bakeddelight:block/dish/template/baking_dish",
       "y": 270
     },
     "facing=east,slice=0": {
-      "model": "bakeddelight:block/baking_dish",
+      "model": "bakeddelight:block/dish/template/baking_dish",
       "y": 90
     },
-    "facing=north,slice=1,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_1slice"
+    "facing=north,slice=1,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_1slice"
     },
-    "facing=south,slice=1,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_1slice",
+    "facing=south,slice=1,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_1slice",
       "y": 180
     },
-    "facing=west,slice=1,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_1slice",
+    "facing=west,slice=1,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_1slice",
       "y": 270
     },
-    "facing=east,slice=1,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_1slice",
+    "facing=east,slice=1,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_1slice",
       "y": 90
     },
-    "facing=north,slice=2,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_2slice"
+    "facing=north,slice=2,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_2slice"
     },
-    "facing=south,slice=2,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_2slice",
+    "facing=south,slice=2,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_2slice",
       "y": 180
     },
-    "facing=west,slice=2,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_2slice",
+    "facing=west,slice=2,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_2slice",
       "y": 270
     },
-    "facing=east,slice=2,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_2slice",
+    "facing=east,slice=2,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_2slice",
       "y": 90
     },
-    "facing=north,slice=3,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_3slice"
+    "facing=north,slice=3,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_3slice"
     },
-    "facing=south,slice=3,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_3slice",
+    "facing=south,slice=3,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_3slice",
       "y": 180
     },
-    "facing=west,slice=3,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_3slice",
+    "facing=west,slice=3,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_3slice",
       "y": 270
     },
-    "facing=east,slice=3,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_3slice",
+    "facing=east,slice=3,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_3slice",
       "y": 90
     },
-    "facing=north,slice=4,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_4slice"
+    "facing=north,slice=4,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_4slice"
     },
-    "facing=south,slice=4,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_4slice",
+    "facing=south,slice=4,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_4slice",
       "y": 180
     },
-    "facing=west,slice=4,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_4slice",
+    "facing=west,slice=4,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_4slice",
       "y": 270
     },
-    "facing=east,slice=4,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_4slice",
+    "facing=east,slice=4,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_4slice",
       "y": 90
     },
-    "facing=north,slice=5,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_5slice"
+    "facing=north,slice=5,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_5slice"
     },
-    "facing=south,slice=5,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_5slice",
+    "facing=south,slice=5,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_5slice",
       "y": 180
     },
-    "facing=west,slice=5,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_5slice",
+    "facing=west,slice=5,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_5slice",
       "y": 270
     },
-    "facing=east,slice=5,dish=uncooked_lasagna_dish": {
-      "model": "bakeddelight:block/uncooked_lasagna_dish_5slice",
+    "facing=east,slice=5,dish=1": {
+      "model": "bakeddelight:block/dish/lasagna/uncooked_lasagna_dish_5slice",
       "y": 90
     },
-    "facing=north,slice=1,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_1slice"
+    "facing=north,slice=1,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_1slice"
     },
-    "facing=south,slice=1,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_1slice",
+    "facing=south,slice=1,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_1slice",
       "y": 180
     },
-    "facing=west,slice=1,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_1slice",
+    "facing=west,slice=1,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_1slice",
       "y": 270
     },
-    "facing=east,slice=1,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_1slice",
+    "facing=east,slice=1,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_1slice",
       "y": 90
     },
-    "facing=north,slice=2,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_2slice"
+    "facing=north,slice=2,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_2slice"
     },
-    "facing=south,slice=2,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_2slice",
+    "facing=south,slice=2,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_2slice",
       "y": 180
     },
-    "facing=west,slice=2,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_2slice",
+    "facing=west,slice=2,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_2slice",
       "y": 270
     },
-    "facing=east,slice=2,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_2slice",
+    "facing=east,slice=2,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_2slice",
       "y": 90
     },
-    "facing=north,slice=3,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_3slice"
+    "facing=north,slice=3,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_3slice"
     },
-    "facing=south,slice=3,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_3slice",
+    "facing=south,slice=3,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_3slice",
       "y": 180
     },
-    "facing=west,slice=3,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_3slice",
+    "facing=west,slice=3,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_3slice",
       "y": 270
     },
-    "facing=east,slice=3,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_3slice",
+    "facing=east,slice=3,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_3slice",
       "y": 90
     },
-    "facing=north,slice=4,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_4slice"
+    "facing=north,slice=4,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_4slice"
     },
-    "facing=south,slice=4,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_4slice",
+    "facing=south,slice=4,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_4slice",
       "y": 180
     },
-    "facing=west,slice=4,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_4slice",
+    "facing=west,slice=4,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_4slice",
       "y": 270
     },
-    "facing=east,slice=4,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_4slice",
+    "facing=east,slice=4,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_4slice",
       "y": 90
     },
-    "facing=north,slice=5,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_5slice"
+    "facing=north,slice=5,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_5slice"
     },
-    "facing=south,slice=5,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_5slice",
+    "facing=south,slice=5,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_5slice",
       "y": 180
     },
-    "facing=west,slice=5,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_5slice",
+    "facing=west,slice=5,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_5slice",
       "y": 270
     },
-    "facing=east,slice=5,dish=uncooked_gratin_dish": {
-      "model": "bakeddelight:block/uncooked_gratin_dish_5slice",
+    "facing=east,slice=5,dish=2": {
+      "model": "bakeddelight:block/dish/gratin/uncooked_gratin_dish_5slice",
+      "y": 90
+    },
+    "facing=north,slice=1,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_1slice"
+    },
+    "facing=south,slice=1,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_1slice",
+      "y": 180
+    },
+    "facing=west,slice=1,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_1slice",
+      "y": 270
+    },
+    "facing=east,slice=1,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_1slice",
+      "y": 90
+    },
+    "facing=north,slice=2,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_2slice"
+    },
+    "facing=south,slice=2,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_2slice",
+      "y": 180
+    },
+    "facing=west,slice=2,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_2slice",
+      "y": 270
+    },
+    "facing=east,slice=2,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_2slice",
+      "y": 90
+    },
+    "facing=north,slice=3,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_3slice"
+    },
+    "facing=south,slice=3,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_3slice",
+      "y": 180
+    },
+    "facing=west,slice=3,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_3slice",
+      "y": 270
+    },
+    "facing=east,slice=3,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_3slice",
+      "y": 90
+    },
+    "facing=north,slice=4,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_4slice"
+    },
+    "facing=south,slice=4,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_4slice",
+      "y": 180
+    },
+    "facing=west,slice=4,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_4slice",
+      "y": 270
+    },
+    "facing=east,slice=4,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_4slice",
+      "y": 90
+    },
+    "facing=north,slice=5,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_5slice"
+    },
+    "facing=south,slice=5,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_5slice",
+      "y": 180
+    },
+    "facing=west,slice=5,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_5slice",
+      "y": 270
+    },
+    "facing=east,slice=5,dish=3": {
+      "model": "bakeddelight:block/dish/moussaka/uncooked_moussaka_dish_5slice",
       "y": 90
     }
   }
