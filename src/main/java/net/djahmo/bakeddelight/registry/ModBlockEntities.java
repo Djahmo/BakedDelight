@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlockEntity {
+public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> ENTITIES;
 
     public static final RegistryObject<BlockEntityType<BakingDishEntity>> BACKING_DISH;

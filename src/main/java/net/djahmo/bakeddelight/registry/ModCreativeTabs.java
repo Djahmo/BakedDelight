@@ -1,13 +1,10 @@
 package net.djahmo.bakeddelight.registry;
 
 import net.djahmo.bakeddelight.BakedDelight;
-import net.djahmo.bakeddelight.custom.item.FoodItem;
-import net.djahmo.bakeddelight.utils.FoodValues;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -47,6 +44,8 @@ public class ModCreativeTabs {
                             pOutput.accept(ModItems.BACON_CREAM.get());
                             pOutput.accept(ModItems.LASAGNA_SLICE.get());
                             pOutput.accept(ModItems.GRATIN_SLICE.get());
+                            pOutput.accept(ModItems.EGGPLANT_SEED.get());
+                            pOutput.accept(ModItems.EGGPLANT.get());
 
                             //Tools
                             pOutput.accept(ModItems.ROLLING_PIN.get());

@@ -4,7 +4,6 @@ import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.item.ChefSuitItem;
 import net.djahmo.bakeddelight.custom.item.FoodItem;
 import net.djahmo.bakeddelight.utils.FoodValues;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,6 +15,7 @@ public class ModItems {
     public static final RegistryObject<Item> ROLLING_PIN;
     public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE;
     public static final RegistryObject<ArmorItem> CHEFS_HAT, CHEFS_JACKET, CHEFS_PANTS, CHEFS_SHOES;
+    public static final RegistryObject<Item> EGGPLANT_SEED, EGGPLANT;
 
     public static void register(IEventBus eventBus) {ITEMS.register(eventBus);}
 
@@ -42,5 +42,9 @@ public class ModItems {
 
         LASAGNA_SLICE = ITEMS.register("lasagna_slice", () -> new FoodItem(FoodValues.LASAGNA_SLICE));
         GRATIN_SLICE = ITEMS.register("gratin_slice", () -> new FoodItem(FoodValues.GRATIN_SLICE));
+
+        //Crop
+        EGGPLANT_SEED = ITEMS.register("eggplant_seed", () -> new ItemNameBlockItem(ModBlocks.EGGPLANT_CROP.get(), new Item.Properties()));
+        EGGPLANT = ITEMS.register("eggplant", () -> new FoodItem(FoodValues.EGGPLANT));
     }
 }

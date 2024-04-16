@@ -1,6 +1,6 @@
 package net.djahmo.bakeddelight.custom.entity;
 
-import net.djahmo.bakeddelight.registry.ModBlockEntity;
+import net.djahmo.bakeddelight.registry.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.Containers;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class BakingDishEntity extends BlockEntity {
     public BakingDishEntity( BlockPos pos, BlockState state) {
-        super(ModBlockEntity.BACKING_DISH.get(), pos, state);
+        super(ModBlockEntities.BACKING_DISH.get(), pos, state);
     }
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(5) {

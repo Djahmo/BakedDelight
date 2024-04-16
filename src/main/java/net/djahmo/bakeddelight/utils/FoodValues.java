@@ -4,7 +4,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class FoodValues {
-    public static final FoodProperties GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE;
+    public static final FoodProperties GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE, EGGPLANT;
 
     private static FoodProperties.Builder setBasicProps(int nutrition, float saturation, boolean isMeat) {
         FoodProperties.Builder temp = new FoodProperties.Builder().nutrition(nutrition).saturationMod(saturation);
@@ -33,6 +33,6 @@ public class FoodValues {
         BACON_CREAM = setProperties(6, 0.6F, false);
         LASAGNA_SLICE = setProperties(10, 1.0F, true);
         GRATIN_SLICE = setProperties(8, 0.9F, false);
-
+        EGGPLANT = setProperties(2, 0.3F, false);
     }
 }

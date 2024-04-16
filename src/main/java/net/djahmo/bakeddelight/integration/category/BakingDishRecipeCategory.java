@@ -2,7 +2,6 @@ package net.djahmo.bakeddelight.integration.category;
 
 import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
-import net.djahmo.bakeddelight.integration.JEIPlugin;
 import net.djahmo.bakeddelight.registry.ModBlocks;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -20,6 +19,7 @@ public class BakingDishRecipeCategory implements IRecipeCategory<BakingDishRecip
 
     public static final ResourceLocation UID;
     public static final ResourceLocation TEXTURE;
+    public static  RecipeType<BakingDishRecipe> BAKING_DISH_TYPE;
 
     private final IDrawable background;
     private final IDrawable icon;
@@ -32,7 +32,7 @@ public class BakingDishRecipeCategory implements IRecipeCategory<BakingDishRecip
 
     @Override
     public RecipeType<BakingDishRecipe> getRecipeType() {
-        return JEIPlugin.BAKING_DISH_TYPE;
+        return BAKING_DISH_TYPE;
     }
 
     @Override
@@ -65,5 +65,6 @@ public class BakingDishRecipeCategory implements IRecipeCategory<BakingDishRecip
     static {
         UID  = new ResourceLocation(BakedDelight.MODID, "baking_dish");
         TEXTURE = new ResourceLocation(BakedDelight.MODID, "textures/gui/jei/baking_dish.png");
+        BAKING_DISH_TYPE = new RecipeType<>(BakingDishRecipeCategory.UID, BakingDishRecipe.class);
     }
 }

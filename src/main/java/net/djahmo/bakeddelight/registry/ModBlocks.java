@@ -4,6 +4,7 @@ import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.block.BakingCookedDishBlock;
 import net.djahmo.bakeddelight.custom.block.BakingDishBlock;
 import net.djahmo.bakeddelight.custom.block.BakingUncookedDishBlock;
+import net.djahmo.bakeddelight.custom.block.crop.EggplantCropBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -20,6 +21,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS;
     public static final RegistryObject<Block> BAKING_DISH, UNCOOKED_LASAGNA_DISH, COOKED_LASAGNA_DISH, UNCOOKED_GRATIN_DISH, COOKED_GRATIN_DISH;
+    public static final RegistryObject<Block> EGGPLANT_CROP;
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
@@ -44,5 +46,8 @@ public class ModBlocks {
 
         UNCOOKED_GRATIN_DISH = setBlock("uncooked_gratin_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)));
         COOKED_GRATIN_DISH = setBlock("cooked_gratin_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.GRATIN_SLICE));
+
+
+        EGGPLANT_CROP = BLOCKS.register("eggplant_crop", () -> new EggplantCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).sound(SoundType.CROP).noCollission().noOcclusion()));
     }
 }

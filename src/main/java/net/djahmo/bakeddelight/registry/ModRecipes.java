@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ModRecipe {
+public class ModRecipes {
 
     public static final DeferredRegister<RecipeSerializer<?>> RECIPES;
 

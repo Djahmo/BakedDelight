@@ -1,12 +1,10 @@
 package net.djahmo.bakeddelight.custom.block;
 
-import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.entity.BakingDishEntity;
 import net.djahmo.bakeddelight.custom.item.FoodItem;
 import net.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
 import net.djahmo.bakeddelight.registry.ModBlocks;
-import net.djahmo.bakeddelight.registry.ModItems;
-import net.djahmo.bakeddelight.registry.ModRecipe;
+import net.djahmo.bakeddelight.registry.ModRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
@@ -205,7 +203,7 @@ public class BakingDishBlock extends BaseEntityBlock {
 
     protected InteractionResult addSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack, Player player, BakingDishEntity entity) {
         if(recipeList == null)
-            recipeList = ModRecipe.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
+            recipeList = ModRecipes.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
 
         int slice = state.getValue(SLICE);
         boolean found = verify(slice, heldStack.getItem(), entity, true);
@@ -244,7 +242,7 @@ public class BakingDishBlock extends BaseEntityBlock {
     }
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if(validRecipe != null) {
+        if(validRecipe != null && state.getValue(SLICE) > 0) {
             if(state.getBlock() != newState.getBlock() && newState.getBlock() != Block.byItem(validRecipe.get(0).get(0))){
                 BlockEntity blockEntity = level.getBlockEntity(pos);
                 if(blockEntity instanceof BakingDishEntity){
