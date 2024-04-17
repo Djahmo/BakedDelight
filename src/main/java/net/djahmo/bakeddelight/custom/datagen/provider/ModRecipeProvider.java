@@ -86,6 +86,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.BACON_BITS.get()), has(ModItems.BACON_BITS.get()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.LASAGNA_SLICE.get(), 6)
+                .requires(ModBlocks.COOKED_LASAGNA_DISH.get())
+                .requires(ForgeTags.TOOLS_KNIVES)
+                .unlockedBy(getHasName(ModBlocks.COOKED_LASAGNA_DISH.get()), has(ModBlocks.COOKED_LASAGNA_DISH.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.GRATIN_SLICE.get(), 6)
+                .requires(ModBlocks.COOKED_GRATIN_DISH.get())
+                .requires(ForgeTags.TOOLS_KNIVES)
+                .unlockedBy(getHasName(ModBlocks.COOKED_GRATIN_DISH.get()), has(ModBlocks.COOKED_GRATIN_DISH.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.MOUSSAKA_SLICE.get(), 6)
+                .requires(ModBlocks.COOKED_MOUSSAKA_DISH.get())
+                .requires(ForgeTags.TOOLS_KNIVES)
+                .unlockedBy(getHasName(ModBlocks.COOKED_MOUSSAKA_DISH.get()), has(ModBlocks.COOKED_MOUSSAKA_DISH.get()))
+                .save(pWriter);
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.BACON.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES) , ModItems.BACON_BITS.get(), 2).build(pWriter, Function.getResourceLocation(ModItems.BACON_BITS.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get()),Ingredient.of(ModTags.ROLLING) , ModItems.LASAGNA_PASTA.get(), 2).build(pWriter, Function.getResourceLocation(ModItems.LASAGNA_PASTA.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.SLICED_POTATO.get()).build(pWriter, Function.getResourceLocation(ModItems.SLICED_POTATO.get()));

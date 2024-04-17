@@ -30,34 +30,30 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 
-    public static RegistryObject<Block> setRecipeBlock(String name, Supplier<Block> block) {
-        BackingDishTypeCollection.registerDishType(name, nextDishId++);
-        return setBlock(name, block);
-    }
-
-    public static RegistryObject<Block> setBlock(String name, Supplier<Block> block) {
+    public static RegistryObject<Block> setBlock(String name, Supplier<Block> block, boolean cookedRecipe, Integer maxStackSize) {
         RegistryObject<Block> temp = BLOCKS.register(name, block);
-        setItemBlock(name, temp);
+        setItemBlock(name, temp, maxStackSize);
+        if(cookedRecipe)  BackingDishTypeCollection.registerDishType(name, nextDishId++);
         return temp;
     }
 
-    public static void setItemBlock(String name, RegistryObject<Block> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(1)));
+    public static void setItemBlock(String name, RegistryObject<Block> block, Integer maxStackSize) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().stacksTo(maxStackSize)));
     }
 
     static {
         BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BakedDelight.MODID);
 
-        BAKING_DISH = setBlock("baking_dish", () -> new BakingDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)));
+        BAKING_DISH = setBlock("baking_dish", () -> new BakingDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)), false, 16);
 
-        UNCOOKED_LASAGNA_DISH = setRecipeBlock("uncooked_lasagna_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)));
-        COOKED_LASAGNA_DISH = setBlock("cooked_lasagna_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.LASAGNA_SLICE));
+        UNCOOKED_LASAGNA_DISH = setBlock("uncooked_lasagna_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)), false, 1);
+        COOKED_LASAGNA_DISH = setBlock("cooked_lasagna_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.LASAGNA_SLICE), true, 1);
 
-        UNCOOKED_GRATIN_DISH = setRecipeBlock("uncooked_gratin_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)));
-        COOKED_GRATIN_DISH = setBlock("cooked_gratin_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.GRATIN_SLICE));
+        UNCOOKED_GRATIN_DISH = setBlock("uncooked_gratin_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)), false, 1);
+        COOKED_GRATIN_DISH = setBlock("cooked_gratin_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.GRATIN_SLICE), true, 1);
 
-        UNCOOKED_MOUSSAKA_DISH = setRecipeBlock("uncooked_moussaka_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)));
-        COOKED_MOUSSAKA_DISH = setBlock("cooked_moussaka_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.MOUSSAKA_SLICE));
+        UNCOOKED_MOUSSAKA_DISH = setBlock("uncooked_moussaka_dish", () -> new BakingUncookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F)), false, 1);
+        COOKED_MOUSSAKA_DISH = setBlock("cooked_moussaka_dish", () -> new BakingCookedDishBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE).strength(0.4F), ModItems.MOUSSAKA_SLICE), true, 1);
 
         EGGPLANT_CROP = BLOCKS.register("eggplant_crop", () -> new EggplantCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).sound(SoundType.CROP).noCollission().noOcclusion()));
     }
