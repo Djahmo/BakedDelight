@@ -21,11 +21,7 @@ public class BackingDishTypeCollection {
     }
 
     public static Integer getDishId(String name) {
-        return cookedDishTypes.get(name);
-    }
-
-    public static Set<ItemLike> getCookedDishItems() {
-        return cookedDishItems;
+        return uncookedDishTypes.get(name);
     }
 
     public static boolean containsItem(Item item) {
