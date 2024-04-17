@@ -1,7 +1,7 @@
 package net.djahmo.bakeddelight.custom.datagen;
 
 import net.djahmo.bakeddelight.BakedDelight;
-import net.djahmo.bakeddelight.custom.datagen.provider.ModLootTableProvider;
+import net.djahmo.bakeddelight.custom.datagen.provider.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -16,12 +16,21 @@ import java.util.concurrent.CompletableFuture;
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
-        DataGenerator generators = event.getGenerator();
-        PackOutput packOutput = generators.getPackOutput();
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generators.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+
+        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
+
+        ModBlockTagProvider blockTagGenerator = generator.addProvider(event.includeServer(),
+                new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 
     }
 }

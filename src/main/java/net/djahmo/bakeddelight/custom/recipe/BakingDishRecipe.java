@@ -15,6 +15,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+
 public class BakingDishRecipe implements Recipe<RecipeWrapper> {
 
     private final ResourceLocation id;
@@ -81,11 +82,10 @@ public class BakingDishRecipe implements Recipe<RecipeWrapper> {
 
     public static class Serializer implements RecipeSerializer<BakingDishRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(BakedDelight.MODID, Type.ID);
 
         @Override
         public @NotNull BakingDishRecipe fromJson(ResourceLocation id, JsonObject json) {
-            ItemStack bakeddish = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "bakeddish"));
+            ItemStack bakeddish = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
 
             NonNullList<Ingredient> ingredients = readIngredients(GsonHelper.getAsJsonArray(json, "ingredients"));
 

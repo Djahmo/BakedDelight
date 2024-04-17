@@ -31,8 +31,7 @@ public class ModBlocks {
     }
 
     public static RegistryObject<Block> setRecipeBlock(String name, Supplier<Block> block) {
-        nextDishId++;
-        BackingDishTypeCollection.registerDishType(name, nextDishId);
+        BackingDishTypeCollection.registerDishType(name, nextDishId++);
         return setBlock(name, block);
     }
 

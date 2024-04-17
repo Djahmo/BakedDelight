@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "cookingtime": 400,
-  "experience": 0.35,
-  "ingredient": {
-    "item": "bakeddelight:uncooked_gratin_dish"
-  },
-  "result": "bakeddelight:cooked_gratin_dish"
-}
