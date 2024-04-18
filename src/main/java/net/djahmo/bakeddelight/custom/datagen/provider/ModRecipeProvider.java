@@ -33,6 +33,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleFoodSmelting(pWriter, ModBlocks.UNCOOKED_LASAGNA_DISH.get(), ModBlocks.COOKED_LASAGNA_DISH.get(), 0.35F, 200);
         simpleFoodSmelting(pWriter, ModBlocks.UNCOOKED_GRATIN_DISH.get(), ModBlocks.COOKED_GRATIN_DISH.get(), 0.35F, 200);
         simpleFoodSmelting(pWriter, ModBlocks.UNCOOKED_MOUSSAKA_DISH.get(), ModBlocks.COOKED_MOUSSAKA_DISH.get(), 0.35F, 200);
+        simpleFoodSmelting(pWriter, ModBlocks.UNCOOKED_TIAN_DISH.get(), ModBlocks.COOKED_TIAN_DISH.get(), 0.35F, 200);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BAKING_DISH.get())
                 .define('#', Items.TERRACOTTA)
@@ -104,10 +105,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.COOKED_MOUSSAKA_DISH.get()), has(ModBlocks.COOKED_MOUSSAKA_DISH.get()))
                 .save(pWriter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.TIAN_SLICE.get(), 6)
+                .requires(ModBlocks.COOKED_TIAN_DISH.get())
+                .requires(ForgeTags.TOOLS_KNIVES)
+                .unlockedBy(getHasName(ModBlocks.COOKED_TIAN_DISH.get()), has(ModBlocks.COOKED_TIAN_DISH.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.EGGPLANT_SEED.get(), 1)
+                .requires(ModItems.EGGPLANT.get())
+                .unlockedBy(getHasName(ModItems.EGGPLANT.get()), has(ModItems.EGGPLANT.get()))
+                .save(pWriter);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.ZUCCHINI_SEED.get(), 1)
+                .requires(ModItems.ZUCCHINI.get())
+                .unlockedBy(getHasName(ModItems.ZUCCHINI.get()), has(ModItems.ZUCCHINI.get()))
+                .save(pWriter);
+
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.BACON.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES) , ModItems.BACON_BITS.get(), 2).build(pWriter, Function.getResourceLocation(ModItems.BACON_BITS.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.WHEAT_DOUGH.get()),Ingredient.of(ModTags.ROLLING) , ModItems.LASAGNA_PASTA.get(), 2).build(pWriter, Function.getResourceLocation(ModItems.LASAGNA_PASTA.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.POTATO), Ingredient.of(ForgeTags.TOOLS_KNIVES), ModItems.SLICED_POTATO.get()).build(pWriter, Function.getResourceLocation(ModItems.SLICED_POTATO.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.EGGPLANT.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES) , ModItems.SLICED_EGGPLANT.get()).build(pWriter, Function.getResourceLocation(ModItems.SLICED_EGGPLANT.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(ModItems.ZUCCHINI.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES) , ModItems.SLICED_ZUCCHINI.get()).build(pWriter, Function.getResourceLocation(ModItems.SLICED_ZUCCHINI.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(vectorwing.farmersdelight.common.registry.ModItems.TOMATO.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES) , ModItems.SLICED_TOMATO.get()).build(pWriter, Function.getResourceLocation(ModItems.SLICED_TOMATO.get()));
 
         CookingPotRecipeBuilder.cookingPotRecipe(ModItems.BACON_CREAM.get(), 1, 200, 1.0F)
                 .addIngredient(Ingredient.of(ForgeTags.MILK))
@@ -151,6 +171,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         BakingDishRecipeBuilder.bakindDishRecipe(ModBlocks.UNCOOKED_MOUSSAKA_DISH.get(), ModItems.SLICED_POTATO.get(), ModItems.SLICED_EGGPLANT.get(), ModItems.BOLOGNESE.get(), ModItems.SLICED_EGGPLANT.get(), vectorwing.farmersdelight.common.registry.ModItems.TOMATO_SAUCE.get(), ModItems.CHEESE.get())
                 .unlockedBy(getHasName(ModBlocks.BAKING_DISH.get()), ModBlocks.BAKING_DISH.get())
                 .build(pWriter, Function.getResourceLocation(ModBlocks.UNCOOKED_MOUSSAKA_DISH.get()));
+
+        BakingDishRecipeBuilder.bakindDishRecipe(ModBlocks.UNCOOKED_TIAN_DISH.get(), ModItems.SLICED_TOMATO.get(), ModItems.SLICED_EGGPLANT.get(), ModItems.SLICED_ZUCCHINI.get(), ModItems.SLICED_TOMATO.get(), ModItems.SLICED_EGGPLANT.get(), ModItems.SLICED_ZUCCHINI.get())
+                .unlockedBy(getHasName(ModBlocks.BAKING_DISH.get()), ModBlocks.BAKING_DISH.get())
+                .build(pWriter, Function.getResourceLocation(ModBlocks.UNCOOKED_TIAN_DISH.get()));
     }
 
     private void simpleFoodSmelting(Consumer<FinishedRecipe> pWriter, ItemLike pIngredient, ItemLike pResult, float pExperience, int pCookingTime) {

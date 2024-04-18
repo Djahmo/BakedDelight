@@ -5,6 +5,7 @@ import net.djahmo.bakeddelight.custom.item.FoodItem;
 import net.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
 import net.djahmo.bakeddelight.registry.ModBlocks;
 import net.djahmo.bakeddelight.registry.ModRecipes;
+import net.djahmo.bakeddelight.utils.Function;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.Containers;
@@ -106,7 +107,7 @@ public class BakingDishBlock extends BaseEntityBlock {
     static {
         FACING = BlockStateProperties.HORIZONTAL_FACING;
         SLICE = IntegerProperty.create("slice", 0, 5);
-        DISH = IntegerProperty.create("dish", 0, 20);
+        DISH = IntegerProperty.create("dish", 1, 4);
     }
 
     /* BLOCK ENTITY */
@@ -194,7 +195,7 @@ public class BakingDishBlock extends BaseEntityBlock {
         boolean found = verify(slice, heldStack.getItem(), entity, true);
         if(found) {
             if(slice < maxSlice-1) {
-                Integer type = BackingDishTypeCollection.getDishId(validRecipes.get(0).get(0).getDescriptionId().split("\\.")[2]);
+                Integer type = BackingDishTypeCollection.getDishId(Function.getItemName(validRecipes.get(0).get(0)));
                 if(type == null)
                     throw new IllegalStateException("Type is missing");
                 if(heldStack.getItem() instanceof FoodItem) {

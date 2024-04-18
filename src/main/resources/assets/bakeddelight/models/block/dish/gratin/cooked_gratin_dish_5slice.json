@@ -1,7 +1,0 @@
-{
-  "parent": "bakeddelight:block/dish/template/baking_cooked_dish_5slice",
-  "textures": {
-    "top": "bakeddelight:block/cooked_gratin_top",
-    "inner": "bakeddelight:block/cooked_gratin_inner"
-  }
-}

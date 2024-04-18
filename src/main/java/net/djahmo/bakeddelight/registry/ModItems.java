@@ -13,9 +13,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS;
     public static final RegistryObject<Item> ROLLING_PIN;
-    public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, SLICED_EGGPLANT, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE, MOUSSAKA_SLICE;
+    public static final RegistryObject<Item> GROUND_MEAT, COOKED_GROUND_MEAT, LASAGNA_PASTA, SLICED_POTATO, SLICED_EGGPLANT, SLICED_ZUCCHINI, SLICED_TOMATO, CHEESE, BACON_BITS, COOKED_BACON_BITS, BOLOGNESE, BACON_CREAM, LASAGNA_SLICE, GRATIN_SLICE, MOUSSAKA_SLICE, TIAN_SLICE;
     public static final RegistryObject<ArmorItem> CHEFS_HAT, CHEFS_JACKET, CHEFS_PANTS, CHEFS_SHOES;
-    public static final RegistryObject<Item> EGGPLANT_SEED, EGGPLANT;
+    public static final RegistryObject<Item> EGGPLANT_SEED, EGGPLANT, ZUCCHINI_SEED, ZUCCHINI;
 
     public static void register(IEventBus eventBus) {ITEMS.register(eventBus);}
 
@@ -34,6 +34,9 @@ public class ModItems {
         COOKED_GROUND_MEAT = ITEMS.register("cooked_ground_meat", () -> new FoodItem(FoodValues.COOKED_GROUND_MEAT));
         LASAGNA_PASTA = ITEMS.register("lasagna_pasta", () -> new FoodItem(FoodValues.LASAGNA_PASTA));
         SLICED_POTATO = ITEMS.register("sliced_potato", () -> new FoodItem(FoodValues.SLICED_POTATO));
+        SLICED_EGGPLANT = ITEMS.register("sliced_eggplant", () -> new FoodItem(FoodValues.EGGPLANT));
+        SLICED_ZUCCHINI = ITEMS.register("sliced_zucchini", () -> new FoodItem(FoodValues.ZUCCHINI));
+        SLICED_TOMATO = ITEMS.register("sliced_tomato", () -> new FoodItem(FoodValues.TOMATO));
         CHEESE = ITEMS.register("cheese", () -> new FoodItem(FoodValues.CHEESE));
         BACON_BITS = ITEMS.register("bacon_bits", () -> new FoodItem(FoodValues.BACON_BITS));
         COOKED_BACON_BITS = ITEMS.register("cooked_bacon_bits", () -> new FoodItem(FoodValues.COOKED_BACON_BITS));
@@ -43,11 +46,12 @@ public class ModItems {
         LASAGNA_SLICE = ITEMS.register("lasagna_slice", () -> new FoodItem(FoodValues.LASAGNA_SLICE));
         GRATIN_SLICE = ITEMS.register("gratin_slice", () -> new FoodItem(FoodValues.GRATIN_SLICE));
         MOUSSAKA_SLICE = ITEMS.register("moussaka_slice", () -> new FoodItem(FoodValues.MOUSSAKA_SLICE));
-
-        SLICED_EGGPLANT = ITEMS.register("sliced_eggplant", () -> new FoodItem(FoodValues.EGGPLANT));
+        TIAN_SLICE = ITEMS.register("tian_slice", () -> new FoodItem(FoodValues.TIAN_SLICE));
 
         //Crop
         EGGPLANT_SEED = ITEMS.register("eggplant_seed", () -> new ItemNameBlockItem(ModBlocks.EGGPLANT_CROP.get(), new Item.Properties()));
         EGGPLANT = ITEMS.register("eggplant", () -> new FoodItem(FoodValues.EGGPLANT));
+        ZUCCHINI_SEED = ITEMS.register("zucchini_seed", () -> new ItemNameBlockItem(ModBlocks.ZUCCHINI_CROP.get(), new Item.Properties()));
+        ZUCCHINI = ITEMS.register("zucchini", () -> new FoodItem(FoodValues.ZUCCHINI));
     }
 }

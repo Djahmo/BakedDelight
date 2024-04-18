@@ -1,6 +1,0 @@
-{
-  "parent": "bakeddelight:block/dish/template/baking_uncooked_dish_4slice",
-  "textures": {
-    "top": "bakeddelight:block/bolognese"
-  }
-}

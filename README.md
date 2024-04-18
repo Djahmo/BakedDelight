@@ -1,5 +1,5 @@
 
-# Latest version : 0.0.2
+# Latest version : 0.1.0
 
     1. Open IDEA, and import project.
     2. Select your build.gradle file and have it import.

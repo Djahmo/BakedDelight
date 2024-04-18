@@ -58,7 +58,7 @@ public class BakingDishRecipeCategory implements IRecipeCategory<BakingDishRecip
         builder.addSlot(RecipeIngredientRole.INPUT, 47, 47).addIngredients(recipe.getIngredients().get(2));
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 14).addIngredients(recipe.getIngredients().get(1));
         builder.addSlot(RecipeIngredientRole.INPUT, 113, 14).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 113, 47).addItemStack(new ItemStack(ModBlocks.BAKING_DISH.get()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 113, 47).addItemStack(new ItemStack(ModBlocks.BAKING_DISH.get()));
         builder.addSlot(RecipeIngredientRole.OUTPUT, 159, 47).addItemStack(recipe.getResultItem(null));
     }
 

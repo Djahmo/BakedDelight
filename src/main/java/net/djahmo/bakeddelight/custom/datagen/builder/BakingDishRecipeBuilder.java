@@ -2,7 +2,9 @@ package net.djahmo.bakeddelight.custom.datagen.builder;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.djahmo.bakeddelight.custom.block.BackingDishTypeCollection;
 import net.djahmo.bakeddelight.custom.datagen.serializer.ModRecipeSerializers;
+import net.djahmo.bakeddelight.utils.Function;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -41,6 +43,11 @@ public class BakingDishRecipeBuilder {
 
 
     public static BakingDishRecipeBuilder bakindDishRecipe(ItemLike mainResult, ItemLike firstIngredient, ItemLike secondIngredient, ItemLike thirdIngredient, ItemLike fourthIngredient, ItemLike fifthIngredient, ItemLike sixthIngredient) {
+        BackingDishTypeCollection.registerDishRecipeIngredient(Function.getItemName(mainResult), 1, Function.getItemName(firstIngredient));
+        BackingDishTypeCollection.registerDishRecipeIngredient(Function.getItemName(mainResult), 2, Function.getItemName(secondIngredient));
+        BackingDishTypeCollection.registerDishRecipeIngredient(Function.getItemName(mainResult), 3, Function.getItemName(thirdIngredient));
+        BackingDishTypeCollection.registerDishRecipeIngredient(Function.getItemName(mainResult), 4, Function.getItemName(fourthIngredient));
+        BackingDishTypeCollection.registerDishRecipeIngredient(Function.getItemName(mainResult), 5, Function.getItemName(fifthIngredient));
         return new BakingDishRecipeBuilder(mainResult, firstIngredient, secondIngredient, thirdIngredient, fourthIngredient, fifthIngredient, sixthIngredient);
     }
 

@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 @Mod(BakedDelight.MODID)
 public class BakedDelight {
     public static final String MODID = "bakeddelight";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public BakedDelight() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -24,6 +23,7 @@ public class BakedDelight {
         ModBlockEntities.register(modEventBus);
         ModSounds.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 

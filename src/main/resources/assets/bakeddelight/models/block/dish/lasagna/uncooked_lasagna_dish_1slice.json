@@ -1,6 +1,0 @@
-{
-  "parent": "bakeddelight:block/dish/template/baking_uncooked_dish_1slice",
-  "textures": {
-    "top": "bakeddelight:block/lasagna_pasta"
-  }
-}
