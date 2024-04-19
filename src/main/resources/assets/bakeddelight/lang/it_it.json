@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Cappello da Chef",
+  "item.bakeddelight.chefs_jacket": "Giacca da Chef",
+  "item.bakeddelight.chefs_pants": "Pantaloni da Chef",
+  "item.bakeddelight.chefs_shoes": "Scarpe da Chef",
+
+  "item.bakeddelight.rolling_pin": "Matterello",
+  "item.bakeddelight.ground_meat": "Carne macinata cruda",
+  "item.bakeddelight.cooked_ground_meat": "Carne macinata cotta",
+  "item.bakeddelight.lasagna_pasta": "Pasta per lasagne",
+  "item.bakeddelight.sliced_potato": "Fette di patata",
+  "item.bakeddelight.sliced_eggplant": "Fette di melanzana",
+  "item.bakeddelight.sliced_zucchini": "Fette di zucchina",
+  "item.bakeddelight.sliced_tomato": "Fette di pomodoro",
+  "item.bakeddelight.cheese": "Formaggio",
+  "item.bakeddelight.bacon_bits": "Cubetti di pancetta crudi",
+  "item.bakeddelight.cooked_bacon_bits": "Cubetti di pancetta cotti",
+  "item.bakeddelight.lasagna_slice": "Fetta di lasagna",
+  "item.bakeddelight.gratin_slice": "Fetta di gratin",
+  "item.bakeddelight.moussaka_slice": "Fetta di moussaka",
+  "item.bakeddelight.tian_slice": "Fetta di tian",
+  "item.bakeddelight.bolognese": "Bolognese",
+  "item.bakeddelight.bacon_cream": "Crema di pancetta",
+
+  "item.bakeddelight.eggplant_seed": "Seme di melanzana",
+  "item.bakeddelight.eggplant": "Melanzana",
+  "item.bakeddelight.zucchini_seed": "Seme di zucchina",
+  "item.bakeddelight.zucchini": "Zucchina",
+
+  "block.bakeddelight.baking_dish": "Piatto da forno",
+  "block.bakeddelight.uncooked_lasagna_dish": "Lasagna cruda",
+  "block.bakeddelight.cooked_lasagna_dish": "Lasagna cotta",
+  "block.bakeddelight.uncooked_gratin_dish": "Gratin crudo",
+  "block.bakeddelight.cooked_gratin_dish": "Gratin cotto",
+  "block.bakeddelight.uncooked_moussaka_dish": "Moussaka cruda",
+  "block.bakeddelight.cooked_moussaka_dish": "Moussaka cotta",
+  "block.bakeddelight.uncooked_tian_dish": "Tian crudo",
+  "block.bakeddelight.cooked_tian_dish": "Tian cotto"
+}

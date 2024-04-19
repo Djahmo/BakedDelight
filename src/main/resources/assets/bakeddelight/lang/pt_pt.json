@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Chapéu de Chef",
+  "item.bakeddelight.chefs_jacket": "Jaqueta de Chef",
+  "item.bakeddelight.chefs_pants": "Calças de Chef",
+  "item.bakeddelight.chefs_shoes": "Sapatos de Chef",
+
+  "item.bakeddelight.rolling_pin": "Rolo de massa",
+  "item.bakeddelight.ground_meat": "Carne moída crua",
+  "item.bakeddelight.cooked_ground_meat": "Carne moída cozida",
+  "item.bakeddelight.lasagna_pasta": "Massa de lasanha",
+  "item.bakeddelight.sliced_potato": "Fatias de batata",
+  "item.bakeddelight.sliced_eggplant": "Fatias de berinjela",
+  "item.bakeddelight.sliced_zucchini": "Fatias de abobrinha",
+  "item.bakeddelight.sliced_tomato": "Fatias de tomate",
+  "item.bakeddelight.cheese": "Queijo",
+  "item.bakeddelight.bacon_bits": "Pedaços de bacon crus",
+  "item.bakeddelight.cooked_bacon_bits": "Pedaços de bacon cozidos",
+  "item.bakeddelight.lasagna_slice": "Fatia de lasanha",
+  "item.bakeddelight.gratin_slice": "Fatia de gratinado",
+  "item.bakeddelight.moussaka_slice": "Fatia de mussaca",
+  "item.bakeddelight.tian_slice": "Fatia de tian",
+  "item.bakeddelight.bolognese": "Bolonhesa",
+  "item.bakeddelight.bacon_cream": "Creme de bacon",
+
+  "item.bakeddelight.eggplant_seed": "Semente de berinjela",
+  "item.bakeddelight.eggplant": "Berinjela",
+  "item.bakeddelight.zucchini_seed": "Semente de abobrinha",
+  "item.bakeddelight.zucchini": "Abobrinha",
+
+  "block.bakeddelight.baking_dish": "Assadeira",
+  "block.bakeddelight.uncooked_lasagna_dish": "Lasanha crua",
+  "block.bakeddelight.cooked_lasagna_dish": "Lasanha cozida",
+  "block.bakeddelight.uncooked_gratin_dish": "Gratinado cru",
+  "block.bakeddelight.cooked_gratin_dish": "Gratinado cozido",
+  "block.bakeddelight.uncooked_moussaka_dish": "Mussaca crua",
+  "block.bakeddelight.cooked_moussaka_dish": "Mussaca cozida",
+  "block.bakeddelight.uncooked_tian_dish": "Tian cru",
+  "block.bakeddelight.cooked_tian_dish": "Tian cozido"
+}

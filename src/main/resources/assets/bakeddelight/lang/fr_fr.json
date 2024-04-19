@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Chapeau du Chef",
+  "item.bakeddelight.chefs_jacket": "Veste du Chef",
+  "item.bakeddelight.chefs_pants": "Pantalon du Chef",
+  "item.bakeddelight.chefs_shoes": "Chaussures du Chef",
+
+  "item.bakeddelight.rolling_pin": "Rouleau à pâtisserie",
+  "item.bakeddelight.ground_meat": "Viande hachée crue",
+  "item.bakeddelight.cooked_ground_meat": "Viande hachée cuite",
+  "item.bakeddelight.lasagna_pasta": "Pâtes à Lasagne",
+  "item.bakeddelight.sliced_potato": "Tranches de Pomme de Terre",
+  "item.bakeddelight.sliced_eggplant": "Tranches d'Aubergine",
+  "item.bakeddelight.sliced_zucchini": "Tranches de Courgette",
+  "item.bakeddelight.sliced_tomato": "Tranches de Tomate",
+  "item.bakeddelight.cheese": "Fromage",
+  "item.bakeddelight.bacon_bits": "Lardons crus",
+  "item.bakeddelight.cooked_bacon_bits": "Lardons cuits",
+  "item.bakeddelight.lasagna_slice": "Part de Lasagne",
+  "item.bakeddelight.gratin_slice": "Part de Gratin",
+  "item.bakeddelight.moussaka_slice": "Part de Moussaka",
+  "item.bakeddelight.tian_slice": "Part de Tian",
+  "item.bakeddelight.bolognese": "Bolognaise",
+  "item.bakeddelight.bacon_cream": "Crème de Lardons",
+
+  "item.bakeddelight.eggplant_seed": "Graine d'Aubergine",
+  "item.bakeddelight.eggplant": "Aubergine",
+  "item.bakeddelight.zucchini_seed": "Graine de Courgette",
+  "item.bakeddelight.zucchini": "Courgette",
+
+  "block.bakeddelight.baking_dish": "Plat à Gratin",
+  "block.bakeddelight.uncooked_lasagna_dish": "Lasagne crue",
+  "block.bakeddelight.cooked_lasagna_dish": "Lasagne cuite",
+  "block.bakeddelight.uncooked_gratin_dish": "Gratin cru",
+  "block.bakeddelight.cooked_gratin_dish": "Gratin cuit",
+  "block.bakeddelight.uncooked_moussaka_dish": "Moussaka crue",
+  "block.bakeddelight.cooked_moussaka_dish": "Moussaka cuite",
+  "block.bakeddelight.uncooked_tian_dish": "Tian cru",
+  "block.bakeddelight.cooked_tian_dish": "Tian cuit"
+}

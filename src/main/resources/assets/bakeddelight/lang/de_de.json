@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Kochmütze",
+  "item.bakeddelight.chefs_jacket": "Kochjacke",
+  "item.bakeddelight.chefs_pants": "Kochhose",
+  "item.bakeddelight.chefs_shoes": "Kochschuhe",
+
+  "item.bakeddelight.rolling_pin": "Nudelholz",
+  "item.bakeddelight.ground_meat": "Rohes Hackfleisch",
+  "item.bakeddelight.cooked_ground_meat": "Gekochtes Hackfleisch",
+  "item.bakeddelight.lasagna_pasta": "Lasagnenudeln",
+  "item.bakeddelight.sliced_potato": "Kartoffelscheiben",
+  "item.bakeddelight.sliced_eggplant": "Auberginenscheiben",
+  "item.bakeddelight.sliced_zucchini": "Zucchinischeiben",
+  "item.bakeddelight.sliced_tomato": "Tomatenscheiben",
+  "item.bakeddelight.cheese": "Käse",
+  "item.bakeddelight.bacon_bits": "Rohes Speckwürfel",
+  "item.bakeddelight.cooked_bacon_bits": "Gekochte Speckwürfel",
+  "item.bakeddelight.lasagna_slice": "Lasagnenstück",
+  "item.bakeddelight.gratin_slice": "Gratinstück",
+  "item.bakeddelight.moussaka_slice": "Moussaka-Stück",
+  "item.bakeddelight.tian_slice": "Tian-Stück",
+  "item.bakeddelight.bolognese": "Bolognese",
+  "item.bakeddelight.bacon_cream": "Speckcreme",
+
+  "item.bakeddelight.eggplant_seed": "Auberginensamen",
+  "item.bakeddelight.eggplant": "Aubergine",
+  "item.bakeddelight.zucchini_seed": "Zucchinisamen",
+  "item.bakeddelight.zucchini": "Zucchini",
+
+  "block.bakeddelight.baking_dish": "Backform",
+  "block.bakeddelight.uncooked_lasagna_dish": "Rohe Lasagne",
+  "block.bakeddelight.cooked_lasagna_dish": "Gekochte Lasagne",
+  "block.bakeddelight.uncooked_gratin_dish": "Rohes Gratin",
+  "block.bakeddelight.cooked_gratin_dish": "Gekochtes Gratin",
+  "block.bakeddelight.uncooked_moussaka_dish": "Rohe Moussaka",
+  "block.bakeddelight.cooked_moussaka_dish": "Gekochte Moussaka",
+  "block.bakeddelight.uncooked_tian_dish": "Rohes Tian",
+  "block.bakeddelight.cooked_tian_dish": "Gekochtes Tian"
+}

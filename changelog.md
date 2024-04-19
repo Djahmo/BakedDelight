@@ -1,3 +1,15 @@
+# Version 0.1.1
+
+- Internationalization support (Made by Huantanhua for Chinese, me for French and ChatGPT for the rest) 
+- Add French translation
+- Add Chinese translation (Thanks to [Huantanhua](https://github.com/Huantanhua))
+- Add Deutsch translation
+- Add Italian translation
+- Add Spanish translation
+- Add Russian translation
+- Add Portuguese translation
+- Add Japanese translation
+
 # Version 0.1.0
 
 - Add Tian recipe

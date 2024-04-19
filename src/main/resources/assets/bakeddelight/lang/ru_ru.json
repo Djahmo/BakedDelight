@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Шапка шеф-повара",
+  "item.bakeddelight.chefs_jacket": "Куртка шеф-повара",
+  "item.bakeddelight.chefs_pants": "Штаны шеф-повара",
+  "item.bakeddelight.chefs_shoes": "Обувь шеф-повара",
+
+  "item.bakeddelight.rolling_pin": "Скалка",
+  "item.bakeddelight.ground_meat": "Сырой фарш",
+  "item.bakeddelight.cooked_ground_meat": "Приготовленный фарш",
+  "item.bakeddelight.lasagna_pasta": "Лазанья тесто",
+  "item.bakeddelight.sliced_potato": "Картофельные дольки",
+  "item.bakeddelight.sliced_eggplant": "Баклажаны нарезанные",
+  "item.bakeddelight.sliced_zucchini": "Кабачки нарезанные",
+  "item.bakeddelight.sliced_tomato": "Томаты нарезанные",
+  "item.bakeddelight.cheese": "Сыр",
+  "item.bakeddelight.bacon_bits": "Сырые кусочки бекона",
+  "item.bakeddelight.cooked_bacon_bits": "Приготовленные кусочки бекона",
+  "item.bakeddelight.lasagna_slice": "Кусок лазаньи",
+  "item.bakeddelight.gratin_slice": "Кусок гратена",
+  "item.bakeddelight.moussaka_slice": "Кусок мусаки",
+  "item.bakeddelight.tian_slice": "Кусок тиана",
+  "item.bakeddelight.bolognese": "Болоньезе",
+  "item.bakeddelight.bacon_cream": "Крем из бекона",
+
+  "item.bakeddelight.eggplant_seed": "Семена баклажана",
+  "item.bakeddelight.eggplant": "Баклажан",
+  "item.bakeddelight.zucchini_seed": "Семена кабачка",
+  "item.bakeddelight.zucchini": "Кабачок",
+
+  "block.bakeddelight.baking_dish": "Форма для запекания",
+  "block.bakeddelight.uncooked_lasagna_dish": "Сырая лазанья",
+  "block.bakeddelight.cooked_lasagna_dish": "Приготовленная лазанья",
+  "block.bakeddelight.uncooked_gratin_dish": "Сырой гратен",
+  "block.bakeddelight.cooked_gratin_dish": "Приготовленный гратен",
+  "block.bakeddelight.uncooked_moussaka_dish": "Сырая мусака",
+  "block.bakeddelight.cooked_moussaka_dish": "Приготовленная мусака",
+  "block.bakeddelight.uncooked_tian_dish": "Сырой тиан",
+  "block.bakeddelight.cooked_tian_dish": "Приготовленный тиан"
+}

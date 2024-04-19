@@ -1,0 +1,41 @@
+{
+  "itemGroup.bakeddelight": "Baked Delight",
+
+  "item.bakeddelight.chefs_hat": "Sombrero de Chef",
+  "item.bakeddelight.chefs_jacket": "Chaqueta de Chef",
+  "item.bakeddelight.chefs_pants": "Pantalones de Chef",
+  "item.bakeddelight.chefs_shoes": "Zapatos de Chef",
+
+  "item.bakeddelight.rolling_pin": "Rodillo de cocina",
+  "item.bakeddelight.ground_meat": "Carne molida cruda",
+  "item.bakeddelight.cooked_ground_meat": "Carne molida cocida",
+  "item.bakeddelight.lasagna_pasta": "Pasta para lasaña",
+  "item.bakeddelight.sliced_potato": "Rodajas de patata",
+  "item.bakeddelight.sliced_eggplant": "Rodajas de berenjena",
+  "item.bakeddelight.sliced_zucchini": "Rodajas de calabacín",
+  "item.bakeddelight.sliced_tomato": "Rodajas de tomate",
+  "item.bakeddelight.cheese": "Queso",
+  "item.bakeddelight.bacon_bits": "Trozos de tocino crudos",
+  "item.bakeddelight.cooked_bacon_bits": "Trozos de tocino cocidos",
+  "item.bakeddelight.lasagna_slice": "Porción de lasaña",
+  "item.bakeddelight.gratin_slice": "Porción de gratén",
+  "item.bakeddelight.moussaka_slice": "Porción de musaca",
+  "item.bakeddelight.tian_slice": "Porción de tian",
+  "item.bakeddelight.bolognese": "Boloñesa",
+  "item.bakeddelight.bacon_cream": "Crema de tocino",
+
+  "item.bakeddelight.eggplant_seed": "Semilla de berenjena",
+  "item.bakeddelight.eggplant": "Berenjena",
+  "item.bakeddelight.zucchini_seed": "Semilla de calabacín",
+  "item.bakeddelight.zucchini": "Calabacín",
+
+  "block.bakeddelight.baking_dish": "Plato para hornear",
+  "block.bakeddelight.uncooked_lasagna_dish": "Lasaña cruda",
+  "block.bakeddelight.cooked_lasagna_dish": "Lasaña cocida",
+  "block.bakeddelight.uncooked_gratin_dish": "Gratén crudo",
+  "block.bakeddelight.cooked_gratin_dish": "Gratén cocido",
+  "block.bakeddelight.uncooked_moussaka_dish": "Musaca cruda",
+  "block.bakeddelight.cooked_moussaka_dish": "Musaca cocida",
+  "block.bakeddelight.uncooked_tian_dish": "Tian crudo",
+  "block.bakeddelight.cooked_tian_dish": "Tian cocido"
+}
