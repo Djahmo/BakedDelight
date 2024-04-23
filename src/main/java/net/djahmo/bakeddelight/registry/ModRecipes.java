@@ -4,14 +4,18 @@ import net.djahmo.bakeddelight.BakedDelight;
 import net.djahmo.bakeddelight.custom.recipe.BakingDishRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -21,10 +25,10 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<BakingDishRecipe>> BAKING_DISH;
 
-    public static ArrayList<ArrayList<Item>> getAllRecipes(RecipeType recipeType) {
+    public static ArrayList<ArrayList<Item>> getAllRecipes(RecipeType recipeType, Level level) {
         ArrayList<ArrayList<Item>> recipes = new ArrayList<ArrayList<Item>>();
         AtomicInteger i = new AtomicInteger(-1);
-        Objects.requireNonNull(Minecraft.getInstance().getConnection()).getRecipeManager().getRecipes().forEach((recipe) -> {
+        level.getRecipeManager().getRecipes().forEach((recipe) -> {
             if (recipe.getType() == recipeType) {
                 i.getAndIncrement();
                 recipes.add(new ArrayList<Item>());
@@ -34,6 +38,7 @@ public class ModRecipes {
         });
         return recipes;
     }
+
     public static void register(IEventBus eventBus) {RECIPES.register(eventBus);}
 
     static {

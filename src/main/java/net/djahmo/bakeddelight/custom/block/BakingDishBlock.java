@@ -189,7 +189,7 @@ public class BakingDishBlock extends BaseEntityBlock {
 
     protected InteractionResult addSlice(BlockState state, Level level, BlockPos pos, ItemStack heldStack, Player player, BakingDishEntity entity) {
         if(recipesList == null)
-            recipesList = ModRecipes.getAllRecipes(BakingDishRecipe.Type.INSTANCE);
+            recipesList = ModRecipes.getAllRecipes(BakingDishRecipe.Type.INSTANCE, level);
 
         int slice = state.getValue(SLICE);
         boolean found = verify(slice, heldStack.getItem(), entity, true);
