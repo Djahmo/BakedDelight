@@ -1,3 +1,7 @@
+# Version 0.1.2
+
+- Fix bug when try craft in multiplayer
+
 # Version 0.1.1
 
 - Internationalization support (Made by Huantanhua for Chinese, me for French and ChatGPT for the rest) 
